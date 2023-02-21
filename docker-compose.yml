@@ -5,9 +5,9 @@ services:
     image: nginx:1.22
     volumes:
       - ./nginx:/etc/nginx
-      - mirror-repos:/data/repos
+      - repos:/data/repos
     ports:
       - "80:80"
 
 volumes:
-  mirror-repos:
+  repos:
