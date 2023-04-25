@@ -1,6 +1,6 @@
 ## CentOS 镜像
 
-配置方法
+CentOS 7 配置方法
 ```
 wget -O /etc/yum.repos.d/CentOS-Base.repo http://{{.Env.MIRRORS_DOMAIN}}/repo/Centos-7.repo
 ```
