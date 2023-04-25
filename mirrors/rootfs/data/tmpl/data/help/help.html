@@ -14,6 +14,10 @@
 <pre><code>wget -O /etc/yum.repos.d/CentOS-Base.repo http://{{.Env.MIRRORS_DOMAIN}}/repo/Centos-7.repo</code></pre>
 <h2 id="pypi镜像">PyPI镜像</h2>
 <p>配置方法</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>找到下列文件<code>~/.pip/pip.conf</code></p></li>
+<li><p>在上述文件中添加或修改:</p></li>
+</ol>
 <pre><code>[global]
 index-url = http://{{.Env.MIRRORS_DOMAIN}}/pypi/simple/
 

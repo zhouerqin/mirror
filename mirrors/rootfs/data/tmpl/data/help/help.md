@@ -8,6 +8,11 @@ wget -O /etc/yum.repos.d/CentOS-Base.repo http://{{.Env.MIRRORS_DOMAIN}}/repo/Ce
 ## PyPI镜像
 
 配置方法
+
+a. 找到下列文件`~/.pip/pip.conf`
+
+b. 在上述文件中添加或修改:
+
 ```
 [global]
 index-url = http://{{.Env.MIRRORS_DOMAIN}}/pypi/simple/
