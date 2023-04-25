@@ -1,10 +1,13 @@
 version: "3"
 services:
-  nginx:
+  mirrors:
     restart: always
-    image: nginx:1.22
+    image: zhouerqin/mirrors:0.1.0
+    env_file:
+      - mirrors.env
+    build:
+      context: mirrors
     volumes:
-      - ./nginx:/etc/nginx
       - repos:/data/repos
     ports:
       - "80:80"
