@@ -1,12 +1,12 @@
 version: "3"
 services:
-  mirrors:
+  mirror:
     restart: always
-    image: zhouerqin/mirrors:0.1.0
+    image: zhouerqin/mirror:0.1.0
     env_file:
-      - mirrors.env
+      - mirror.env
     build:
-      context: mirrors
+      context: mirror
     volumes:
       - repos:/data/repos
     ports:

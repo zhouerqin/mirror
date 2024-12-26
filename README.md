@@ -4,7 +4,7 @@
 
 使用方法:
 
-a. 添加`mirrors.env`,修改`MIRRORS_DOMAIN`为网站域名
+a. 添加`mirror.env`,修改`MIRRORS_DOMAIN`为网站域名
 
 b. 使用`docker-compose up -d`启动容器
 
