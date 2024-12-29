@@ -11,7 +11,7 @@
 <body>
 <h2 id="centos-镜像">CentOS 镜像</h2>
 <p>CentOS 7 配置方法</p>
-<pre><code>wget -O /etc/yum.repos.d/CentOS-Base.repo http://{{.Env.MIRRORS_DOMAIN}}/repo/Centos-7.repo</code></pre>
+<pre><code>wget -O /etc/yum.repos.d/CentOS-Base.repo http://{{.Env.MIRROR_DOMAIN}}/repo/Centos-7.repo</code></pre>
 <h2 id="pypi镜像">PyPI镜像</h2>
 <p>配置方法</p>
 <ol style="list-style-type: lower-alpha">
@@ -19,22 +19,22 @@
 <li><p>在上述文件中添加或修改:</p></li>
 </ol>
 <pre><code>[global]
-index-url = http://{{.Env.MIRRORS_DOMAIN}}/pypi/simple/
+index-url = http://{{.Env.MIRROR_DOMAIN}}/pypi/simple/
 
 [install]
-trusted-host={{.Env.MIRRORS_DOMAIN}}</code></pre>
+trusted-host={{.Env.MIRROR_DOMAIN}}</code></pre>
 <h2 id="epel-镜像">Epel 镜像</h2>
 <p>epel(RHEL 7) 配置方法</p>
-<pre><code>wget -O /etc/yum.repos.d/epel.repo http://{{.Env.MIRRORS_DOMAIN}}/repo/epel-7.repo</code></pre>
+<pre><code>wget -O /etc/yum.repos.d/epel.repo http://{{.Env.MIRROR_DOMAIN}}/repo/epel-7.repo</code></pre>
 <h2 id="docker-ce镜像">Docker CE镜像</h2>
 <p>CentOS 7（使用 yum 进行安装）</p>
 <pre><code># step 1: 安装必要的一些系统工具
 sudo yum install -y yum-utils device-mapper-persistent-data lvm2
 # Step 2: 添加软件源信息
-sudo yum-config-manager --add-repo http://{{.Env.MIRRORS_DOMAIN}}/docker-ce/linux/centos/docker-ce.repo
+sudo yum-config-manager --add-repo http://{{.Env.MIRROR_DOMAIN}}/docker-ce/linux/centos/docker-ce.repo
 # Step 3
-# sudo sed -i 's+download.docker.com+{{.Env.MIRRORS_DOMAIN}}/docker-ce+' /etc/yum.repos.d/docker-ce.repo
-sudo sed -i 's+https://mirrors.aliyun.com+http://{{.Env.MIRRORS_DOMAIN}}+' /etc/yum.repos.d/docker-ce.repo
+# sudo sed -i 's+download.docker.com+{{.Env.MIRROR_DOMAIN}}/docker-ce+' /etc/yum.repos.d/docker-ce.repo
+sudo sed -i 's+https://mirrors.aliyun.com+http://{{.Env.MIRROR_DOMAIN}}+' /etc/yum.repos.d/docker-ce.repo
 # Step 4: 更新并安装Docker-CE
 sudo yum makecache fast
 sudo yum -y install docker-ce
