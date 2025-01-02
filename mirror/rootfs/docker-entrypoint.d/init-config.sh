@@ -2,8 +2,8 @@
 #
 #
 # set -x
-if [[ -z $MIRROR_DOMAIN ]]; then
-    echo "必须要设置 MIRROR_DOMAIN 环境变量"
+if [[ -z $MIRROR_ENDPOINT ]]; then
+    echo "必须要设置 MIRROR_ENDPOINT 环境变量"
     exit 1
 fi
 cd $(dirname $0)

@@ -3,14 +3,18 @@ services:
   mirror:
     restart: always
     image: zhouerqin/mirror:0.1.0
+    container_name: mirror
+    networks:
+      - proxy
     env_file:
       - mirror.env
     build:
       context: mirror
     volumes:
       - repos:/data/repos
-    ports:
-      - "80:80"
 
 volumes:
   repos:
+networks:
+  proxy:
+    external: true
